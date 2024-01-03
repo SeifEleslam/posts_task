@@ -1,0 +1,14 @@
+<div>
+  <div *ngIf="!loading">
+    <app-post-card *ngFor="let post of posts" [post]="post" />
+  </div>
+  <div *ngIf="loading">
+    <app-loading-card *ngFor="let card of [1, 2, 3, 4, 5]" />
+  </div>
+  <app-custom-paginator
+    [loading]="loading"
+    (pageChanged)="updatePage($event)"
+    [currentPage]="this.currentPage"
+    [totalPages]="postLimit"
+  />
+</div>

@@ -1,1 +1,15 @@
-<app-header />
+<div>
+  <app-header />
+  <div
+    style="
+      display: flex;
+      justify-content: center;
+      padding-top: 20px;
+      overflow: auto;
+    "
+  >
+    <div style="width: min(800px, 98%)">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

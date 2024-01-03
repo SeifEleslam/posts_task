@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-layout',
@@ -6,6 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./layout.component.scss'],
 })
 export class LayoutComponent {
-  title =
-    '\tquo et expedita modi cum officia vel magni\ndoloribus qui repudiandae\nvero nisi sit\nquos veniam quod sed accusamus veritatis error';
+  constructor(private router: Router) {
+    if (this.router.routerState.snapshot.url === '/')
+      this.router.navigate(['posts']);
+  }
 }

@@ -1,0 +1,24 @@
+.header {
+  background-color: whitesmoke;
+  border-bottom: 0.3px dashed grey;
+  display: flex;
+  position: fixed;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 15px 0;
+  width: 100%;
+  z-index: 999; /* Ensure it stays on top */
+}
+.placeholder {
+  border-bottom: 0.3px dashed grey;
+  opacity: 0;
+
+  padding: 15px 0;
+  width: 100%;
+}
+.des {
+  font-size: x-large;
+  font-weight: bold;
+  color: gray;
+}

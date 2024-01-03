@@ -1,0 +1,39 @@
+/* Basic styling for a clean look */
+.pagination {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 1rem;
+  list-style: none;
+  line-height: 50px;
+}
+
+.page-item {
+  margin-right: 0.75rem;
+  margin-left: 0.75rem;
+}
+
+.page-link {
+  text-decoration: none;
+  border: none;
+  border-radius: 999px;
+  padding: 0.7rem 1rem;
+  background-color: #fff;
+  color: #777;
+  cursor: pointer;
+}
+
+.page-link:hover {
+  background-color: #eee;
+}
+
+.page-item.active .page-link {
+  background-color: rgba($color: #007bff, $alpha: 0.1);
+  color: #007bff;
+}
+
+.page-item.disabled .page-link {
+  cursor: not-allowed;
+  background-color: #eee;
+  color: #aaa;
+}

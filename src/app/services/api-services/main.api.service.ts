@@ -4,7 +4,7 @@ import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
 import { Params } from 'src/app/models/params';
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class MainApiService {
   url = environment.urlDomain;
 
@@ -16,15 +16,9 @@ export class MainApiService {
     params?: Partial<Params>,
     body?: In
   ): Observable<Out> {
-    return this.http.request<Out>(
-      ...[
-        method,
-        this.url + endpoint,
-        {
-          body,
-          params,
-        },
-      ]
-    );
+    return this.http.request<Out>(method, this.url + endpoint, {
+      body,
+      params,
+    });
   }
 }

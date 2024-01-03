@@ -1,0 +1,8 @@
+<div class="card" *ngIf="loading">
+  <div class="card-body">
+    <div class="placeholder-title"></div>
+    <div *ngFor="let line of placeholderLines" class="placeholder-line"></div>
+  </div>
+</div>
+
+<ng-content *ngIf="!loading"></ng-content>

@@ -10,7 +10,7 @@ export class PostApiService {
 
   endpoint = 'posts';
 
-  getPosts(params?: Params) {
+  getPosts(params?: Partial<Params>) {
     return this.fetcher.fetchData<undefined, Post[]>(
       'GET',
       this.endpoint,
@@ -18,7 +18,7 @@ export class PostApiService {
     );
   }
 
-  updatePost(body: Partial<Post>, params?: Params) {
+  updatePost(body: Partial<Post>, params?: Partial<Params>) {
     return this.fetcher.fetchData<Partial<Post>, Post>(
       'PATCH',
       this.endpoint,
@@ -27,7 +27,7 @@ export class PostApiService {
     );
   }
 
-  deletePost(id: ID, params?: Params) {
+  deletePost(id: ID, params?: Partial<Params>) {
     return this.fetcher.fetchData<Partial<Post>, Post>(
       'DELETE',
       this.endpoint + `/${id}`,
