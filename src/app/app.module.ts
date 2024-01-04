@@ -7,7 +7,8 @@ import { HeaderComponent } from './layouts/header/header.component';
 import { LayoutComponent } from './layouts/layout.component';
 import { NotfoundComponent } from './pages/notfound/notfound.component';
 import { HeaderService } from './services/header.service';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { ErrorCatchingInterceptor } from './interceptors/error-catching.interceptor';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,14 @@ import { HttpClientModule } from '@angular/common/http';
     NotfoundComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
-  providers: [HeaderService],
+  providers: [
+    HeaderService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: ErrorCatchingInterceptor,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

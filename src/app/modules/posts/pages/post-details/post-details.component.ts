@@ -31,6 +31,8 @@ export class PostDetailsComponent {
   user?: User;
   comments?: PostComment[];
 
+  empFunc() {}
+
   getPostDetails(postID: number) {
     this.loading = true;
     this.postService

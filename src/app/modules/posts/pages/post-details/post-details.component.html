@@ -1,4 +1,12 @@
 <div>
+  <a routerLink="/posts">
+    <app-custom-button
+      type="link"
+      (onClick)="empFunc()"
+      label="Go to posts page"
+      style="font-size: larger"
+    />
+  </a>
   <app-loading-card *ngFor="let card of [1, 2, 3]" [loading]="loading" />
   <div class="post-details" *ngIf="!loading">
     <div class="post-header">
