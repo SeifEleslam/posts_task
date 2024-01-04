@@ -8,7 +8,7 @@
     [name]="name"
     [class.notValid]="
       !$any(form.controls[name])?.valid &&
-      ($any(form.controls[name])?.touched || form.submitted)
+      ($any(form.controls[name])?.touched || submitted)
     "
     [required]="required"
   ></textarea>
@@ -16,7 +16,7 @@
     [msg]="errMsg"
     [show]="
       !$any(form.controls[name])?.valid &&
-      ($any(form.controls[name])?.touched || form.submitted)
+      ($any(form.controls[name])?.touched || submitted)
     "
   />
 </div>
