@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Params } from '@angular/router';
-import { Subject } from 'rxjs';
-import { PERPAGEOPTIONS, POSTLIMIT } from '../models/enums';
+import { PERPAGEOPTIONS, POSTLIMIT, TOTALPOSTRECORDS } from '../models/enums';
 
 @Injectable()
 export class ParamsService {
@@ -20,13 +19,14 @@ export class ParamsService {
     }
     return [
       +params['_start'] >= 0 &&
+        +params['_start'] < TOTALPOSTRECORDS &&
         +params['_start'] % POSTLIMIT === 0 &&
         POSTLIMIT === +params['_limit'] &&
         valid,
       {
         ...newParams,
         _start:
-          +params['_start'] >= 0
+          +params['_start'] >= 0 && +params['_start'] < TOTALPOSTRECORDS
             ? +params['_start'] % POSTLIMIT === 0
               ? +params['_start']
               : Math.floor(+params['_start'] / 10) * 10
