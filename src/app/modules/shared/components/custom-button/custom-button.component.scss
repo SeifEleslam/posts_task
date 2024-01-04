@@ -1,0 +1,43 @@
+button {
+  padding: 10px 20px;
+  transition: all 500ms;
+  text-decoration: none;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.link {
+  background-color: transparent;
+  color: var(--primary);
+}
+.link:hover {
+  background: color-mix(in srgb, var(--primary) 10%, transparent);
+}
+
+.primary {
+  background-color: var(--primary);
+  color: white;
+}
+.primary,
+.danger,
+.info:hover {
+  opacity: 0.8;
+}
+
+.danger {
+  background-color: rgba(255, 0, 0, 0.555);
+  color: white;
+}
+
+.info {
+  background-color: rgb(95, 119, 255);
+  color: white;
+}
+
+.disabled {
+  filter: grayscale(50%);
+  cursor: not-allowed;
+}
+.loading {
+  cursor: progress;
+}

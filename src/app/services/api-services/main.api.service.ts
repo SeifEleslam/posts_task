@@ -1,8 +1,7 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
-import { Params } from 'src/app/models/params';
 
 @Injectable({ providedIn: 'root' })
 export class MainApiService {
@@ -13,7 +12,13 @@ export class MainApiService {
   fetchData<In, Out>(
     method: 'GET' | 'POST' | 'PUT' | 'DELETE' | 'PATCH',
     endpoint: string,
-    params?: Partial<Params>,
+    params?: {
+      [ke: string]:
+        | string
+        | number
+        | boolean
+        | readonly (string | number | boolean)[];
+    },
     body?: In
   ): Observable<Out> {
     return this.http.request<Out>(method, this.url + endpoint, {

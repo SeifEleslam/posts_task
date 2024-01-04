@@ -6,6 +6,8 @@
   margin-top: 1rem;
   list-style: none;
   line-height: 50px;
+  text-decoration: none;
+  margin: 20px 0;
 }
 
 .page-item {
@@ -18,22 +20,16 @@
   border: none;
   border-radius: 999px;
   padding: 0.7rem 1rem;
-  background-color: #fff;
-  color: #777;
+
   cursor: pointer;
 }
 
-.page-link:hover {
-  background-color: #eee;
-}
-
 .page-item.active .page-link {
-  background-color: rgba($color: #007bff, $alpha: 0.1);
+  background-color: color-mix(in srgb, var(--decor) 10%, transparent);
   color: #007bff;
 }
 
 .page-item.disabled .page-link {
   cursor: not-allowed;
-  background-color: #eee;
   color: #aaa;
 }

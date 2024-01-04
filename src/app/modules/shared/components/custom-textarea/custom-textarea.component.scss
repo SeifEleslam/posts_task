@@ -1,0 +1,18 @@
+.custom-input {
+  transition: border 500ms;
+  padding: 0.6rem;
+  background-color: transparent;
+  border: 0.1px solid var(--decor);
+  border-radius: 8px;
+  box-shadow: 0 1px 3px color-mix(in srgb, var(--decor) 30%, transparent);
+  outline: none;
+  color: var(--text);
+  font-size: large;
+  max-height: 250px;
+  height: 200px;
+  resize: vertical;
+}
+.notValid {
+  border: 1px solid rgb(255, 93, 93);
+  box-shadow: 0 1px 3px color-mix(in srgb, rgb(255, 93, 93) 30%, transparent);
+}

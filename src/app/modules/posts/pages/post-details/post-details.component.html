@@ -1,0 +1,36 @@
+<div>
+  <app-loading-card *ngFor="let card of [1, 2, 3]" [loading]="loading" />
+  <div class="post-details" *ngIf="!loading">
+    <div class="post-header">
+      <div class="avatar">{{ user?.name?.charAt(0)?.toUpperCase() }}</div>
+      <div class="author-info">
+        <h3>{{ user?.name }}</h3>
+        <p>
+          {{ user?.email }} <span>({{ user?.username }})</span>
+        </p>
+      </div>
+    </div>
+    <h2>{{ post?.title }}</h2>
+    <pre style="line-height: 30px; font-size: larger; white-space: pre-wrap">{{
+      post?.body
+    }}</pre>
+    <div style="display: flex; justify-content: center">
+      <div class="hr"></div>
+    </div>
+    <h3>Comments</h3>
+    <div class="comments">
+      <div class="comment" *ngFor="let comment of comments">
+        <div class="comment-content">
+          <h4>{{ comment.name }}</h4>
+          <p>{{ comment.email }}</p>
+          <pre style="font-size: large; white-space: pre-wrap">{{
+            comment.body
+          }}</pre>
+          <div style="display: flex; justify-content: center">
+            <div class="line"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

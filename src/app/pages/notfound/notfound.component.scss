@@ -5,7 +5,6 @@
   justify-content: center;
   text-align: center;
   height: 100vh;
-  background-color: #f5f5f5;
 }
 
 .not-found-image {
@@ -16,14 +15,14 @@
 
 .not-found-title {
   font-size: 2rem;
-  color: #333;
+  color: var(--title-text);
   text-transform: uppercase;
   font-weight: 700;
 }
 
 .not-found-message {
   font-size: 1.2rem;
-  color: #666;
+  color: var(--text);
   margin-top: 15px;
 }
 
@@ -34,7 +33,7 @@
 .not-found-link {
   text-decoration: none;
   padding: 10px 20px;
-  border: 1px solid #ccc;
+  border: 1px solid color-mix(in srgb, var(decor) 10%, transparent);
   border-radius: 5px;
   color: #333;
   font-weight: 600;
@@ -42,5 +41,5 @@
 }
 
 .not-found-link:hover {
-  background-color: #eee;
+  background-color: color-mix(in srgb, #eee 10%, transparent);
 }

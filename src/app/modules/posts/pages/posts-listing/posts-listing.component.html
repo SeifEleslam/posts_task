@@ -1,6 +1,10 @@
 <div>
   <div *ngIf="!loading">
-    <app-post-card *ngFor="let post of posts" [post]="post" />
+    <app-post-card
+      *ngFor="let post of posts"
+      [post]="post"
+      (edit)="editPost($event)"
+    />
   </div>
   <div *ngIf="loading">
     <app-loading-card *ngFor="let card of [1, 2, 3, 4, 5]" />
@@ -10,5 +14,11 @@
     (pageChanged)="updatePage($event)"
     [currentPage]="this.currentPage"
     [totalPages]="postLimit"
+  />
+  <app-post-modal
+    (close)="closeEditPost()"
+    [isOpen]="editModal"
+    [post]="selectedPost"
+    (afterSuccess)="afterSuccess()"
   />
 </div>

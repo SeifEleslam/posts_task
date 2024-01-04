@@ -1,0 +1,30 @@
+<form #form="ngForm" id="post_edit_form">
+  <app-custom-modal
+    [isOpen]="isOpen"
+    (afterClose)="afterClose()"
+    (submit)="submit(form)"
+    title="Edit Post"
+    [disableSubmit]="disableSubmit"
+    [loading]="loading"
+  >
+    <app-custom-input
+      name="title"
+      [value]="_post?.title"
+      [pattern]="titleRegex"
+      [required]="true"
+      [form]="form"
+      label="Title:"
+      errMsg="Title must have more than 3 letters and less than 200"
+    />
+    <br />
+    <app-custom-textarea
+      name="body"
+      [value]="_post?.body"
+      [pattern]="bodyRegex"
+      [required]="true"
+      [form]="form"
+      label="Body:"
+      errMsg="Body must have more than 3 letters and less than 750"
+    />
+  </app-custom-modal>
+</form>

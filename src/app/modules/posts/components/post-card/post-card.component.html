@@ -1,8 +1,25 @@
 <div class="post-card">
   <header class="card-header">
     <h2 class="card-title">{{ post?.title }}</h2>
+    <div style="min-width: 80px">
+      <app-custom-button
+        icon="edit"
+        label="Edit"
+        type="info"
+        (onClick)="edit.emit(post)"
+      />
+    </div>
   </header>
   <div class="card-body">
     <pre style="white-space: pre-wrap">{{ post?.body }}</pre>
+  </div>
+  <div class="card-footer">
+    <a [routerLink]="'/posts/' + post?.id">
+      <app-custom-button
+        (onClick)="navToDetails()"
+        type="link"
+        label="See Details"
+      />
+    </a>
   </div>
 </div>

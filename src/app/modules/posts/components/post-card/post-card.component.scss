@@ -1,23 +1,33 @@
 .post-card {
-  border: 1px solid #ccc;
+  border: 1px solid var(--decor);
   border-radius: 4px;
   padding: 1rem;
   margin-bottom: 1rem;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 3px color-mix(in srgb, var(--decor) 30%, transparent);
 }
 
 .card-header {
-  border-bottom: 1px solid #eee;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid color-mix(in srgb, var(--decor) 30%, transparent);
   padding-bottom: 0.5rem;
 }
 
 .card-title {
-  font-size: 1.2rem;
+  color: var(--title-text);
+  font-size: 1.6rem;
   font-weight: bold;
-  margin-bottom: 0.5rem;
 }
 
 .card-body {
+  border-bottom: 1px solid color-mix(in srgb, var(--decor) 30%, transparent);
   font-size: 1rem;
   line-height: 1.5;
+  margin-bottom: 0.5rem;
+}
+.card-footer {
+  display: flex;
+  justify-content: right;
+  align-items: center;
 }

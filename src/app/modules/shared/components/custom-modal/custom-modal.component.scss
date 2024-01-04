@@ -1,0 +1,46 @@
+.hiddenModal {
+  opacity: 0;
+  pointer-events: none;
+}
+.layer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  transition: opacity 500ms;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  backdrop-filter: blur(20px);
+}
+
+.modal {
+  padding: 20px;
+  background-color: var(--bg);
+  border-radius: 8px;
+  width: min(95%, 600px);
+  max-height: min(98%, 600px);
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 1px 12px color-mix(in srgb, var(--text) 50%, transparent);
+  overflow-y: auto;
+}
+.title {
+  border-bottom: 1px solid color-mix(in srgb, var(--decor) 30%, transparent);
+  padding: 0.5rem 0;
+}
+.content {
+  border-bottom: 1px solid color-mix(in srgb, var(--decor) 30%, transparent);
+  padding: 1rem 0;
+}
+.footer {
+  width: 100%;
+  display: flex;
+  justify-content: right;
+  margin-top: 1rem;
+}
+.footer > * {
+  margin-left: 4px;
+}

@@ -1,0 +1,11 @@
+.msg {
+  color: red;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 500ms;
+}
+.showMsg {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY("20px");
+}

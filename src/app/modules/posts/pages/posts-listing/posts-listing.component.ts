@@ -32,6 +32,8 @@ export class PostsListingComponent implements OnDestroy {
   posts?: Post[];
   postLimit = POSTLIMIT;
   loading = false;
+  editModal = false;
+  selectedPost?: Post;
 
   ngOnDestroy() {
     this.destroyed.next(true);
@@ -75,5 +77,19 @@ export class PostsListingComponent implements OnDestroy {
         this.posts = data;
       })
       .add(() => (this.loading = false));
+  }
+
+  editPost(post: Post) {
+    this.editModal = true;
+    this.selectedPost = post;
+  }
+
+  closeEditPost() {
+    this.editModal = false;
+    this.selectedPost = undefined;
+  }
+
+  afterSuccess() {
+    this.getPosts(this.queryParams);
   }
 }

@@ -1,0 +1,13 @@
+<button
+  [style]="style"
+  [class.link]="type === 'link'"
+  [class.primary]="type === 'primary'"
+  [class.danger]="type === 'danger'"
+  [class.info]="type === 'info'"
+  [class.disabled]="disabled"
+  [class.loading]="loading"
+  (click)="handleClick()"
+  [disabled]="disabled"
+>
+  <span>{{ label }}</span>
+</button>

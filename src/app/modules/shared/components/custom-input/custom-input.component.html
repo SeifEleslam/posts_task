@@ -1,0 +1,20 @@
+<div style="display: flex; flex-direction: column">
+  <label style="font-size: large; margin-bottom: 0.5rem">{{ label }}</label>
+  <input
+    [style]="style"
+    class="custom-input"
+    [ngModel]="value"
+    [pattern]="pattern"
+    [name]="name"
+    [class.notValid]="
+      !$any(form.controls[name])?.valid && $any(form.controls[name])?.touched
+    "
+    [required]="required"
+  />
+  <app-error-msg
+    [msg]="errMsg"
+    [show]="
+      !$any(form.controls[name])?.valid && $any(form.controls[name])?.touched
+    "
+  />
+</div>
