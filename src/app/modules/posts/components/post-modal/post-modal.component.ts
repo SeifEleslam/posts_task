@@ -47,7 +47,7 @@ export class PostModalComponent implements AfterViewInit {
   noChanges: boolean = true;
   destroyed = new Subject<void>();
   loading = false;
-  submitted = true;
+  submitted = false;
 
   ngAfterViewInit(): void {
     this.formEl.valueChanges!.pipe(takeUntil(this.destroyed)).subscribe(() => {
@@ -68,6 +68,7 @@ export class PostModalComponent implements AfterViewInit {
 
   afterClose() {
     this.close.emit();
+    this.submitted = false;
     this.formEl.reset({ ...this.post });
   }
 
