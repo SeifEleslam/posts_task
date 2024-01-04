@@ -14,8 +14,8 @@ import {
 })
 export class CustomModalComponent {
   @Input() title = '';
-  @Input() isOpen = true;
-  @Input() disableSubmit = true;
+  @Input() isOpen = false;
+  @Input() disableSubmit = false;
   @Input() loading = false;
   @Output() submit = new EventEmitter<void>();
   @Output() afterClose = new EventEmitter<void>();

@@ -44,3 +44,12 @@
 .footer > * {
   margin-left: 4px;
 }
+.changesHint {
+  filter: grayscale(70%);
+  color: var(--primary);
+  transition: opacity 500ms;
+  opacity: 0;
+}
+.showHint {
+  opacity: 1;
+}

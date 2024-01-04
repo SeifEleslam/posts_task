@@ -16,4 +16,5 @@ export class CustomInputComponent {
   @Input() required!: boolean;
   @Input() label!: string;
   @Input() errMsg!: string;
+  @Input() submitted: boolean = false;
 }

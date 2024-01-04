@@ -16,5 +16,10 @@
         (onClick)="submit.emit()"
       />
     </div>
+    <div style="text-align: right">
+      <small class="changesHint" [class.showHint]="disableSubmit"
+        >There is no changes</small
+      >
+    </div>
   </div>
 </div>

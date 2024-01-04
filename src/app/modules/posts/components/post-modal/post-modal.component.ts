@@ -44,8 +44,10 @@ export class PostModalComponent implements AfterViewInit {
   _post?: Post;
   originalPost?: Post;
   disableSubmit: boolean = true;
+  noChanges: boolean = true;
   destroyed = new Subject<boolean>();
   loading = false;
+  submitted = true;
 
   ngAfterViewInit(): void {
     this.formEl.valueChanges!.pipe(takeUntil(this.destroyed)).subscribe(() => {
@@ -53,7 +55,8 @@ export class PostModalComponent implements AfterViewInit {
         'title',
         'body',
       ]);
-      if (!diff || Object.keys(diff).length === 0) this.disableSubmit = true;
+      if (!diff || Object.keys(diff).length === 0)
+        (this.disableSubmit = true), (this.noChanges = true);
       else this.disableSubmit = false;
     });
   }
@@ -69,6 +72,7 @@ export class PostModalComponent implements AfterViewInit {
   }
 
   submit(form: NgForm) {
+    this.submitted = true;
     if (!form.valid || this.disableSubmit) {
       this.utils.focusInvalid('post_edit_form');
       return;

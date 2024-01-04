@@ -7,14 +7,16 @@
     [pattern]="pattern"
     [name]="name"
     [class.notValid]="
-      !$any(form.controls[name])?.valid && $any(form.controls[name])?.touched
+      !$any(form.controls[name])?.valid &&
+      ($any(form.controls[name])?.touched || submitted)
     "
     [required]="required"
   />
   <app-error-msg
     [msg]="errMsg"
     [show]="
-      !$any(form.controls[name])?.valid && $any(form.controls[name])?.touched
+      !$any(form.controls[name])?.valid &&
+      ($any(form.controls[name])?.touched || submitted)
     "
   />
 </div>
