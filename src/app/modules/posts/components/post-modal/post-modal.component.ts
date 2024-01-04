@@ -45,7 +45,7 @@ export class PostModalComponent implements AfterViewInit {
   originalPost?: Post;
   disableSubmit: boolean = true;
   noChanges: boolean = true;
-  destroyed = new Subject<boolean>();
+  destroyed = new Subject<void>();
   loading = false;
   submitted = true;
 
@@ -62,7 +62,7 @@ export class PostModalComponent implements AfterViewInit {
   }
 
   ngOnDestroy() {
-    this.destroyed.next(true);
+    this.destroyed.next();
     this.destroyed.complete();
   }
 

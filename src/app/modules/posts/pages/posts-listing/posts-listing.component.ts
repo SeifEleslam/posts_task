@@ -27,7 +27,7 @@ export class PostsListingComponent implements OnDestroy {
     headerService.setTitle('See Some Posts');
   }
   currentPage = 0;
-  destroyed = new Subject<boolean>();
+  destroyed = new Subject<void>();
   queryParams: Partial<Params> = {};
   posts?: Post[];
   postLimit = POSTLIMIT;
@@ -36,7 +36,7 @@ export class PostsListingComponent implements OnDestroy {
   selectedPost?: Post;
 
   ngOnDestroy() {
-    this.destroyed.next(true);
+    this.destroyed.next();
     this.destroyed.complete();
   }
 
